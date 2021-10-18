@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { VideoScreen } from './src/screens/video.screen';
+import { LiveChatContextProvider } from './src/features/LiveChat/livechat.context';
+
+const videoLink = "https://www.youtube.com/embed/rFYgGG2Rgd0?autoplay=1&loop=1&mute=1"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <LiveChatContextProvider>
+      <VideoScreen link={videoLink} />
+    </LiveChatContextProvider>
   );
 }
 
